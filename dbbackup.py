@@ -14,8 +14,8 @@
 # Some scheduling CRON TIps in http://tecadmin.net/crontab-in-linux-with-20-examples-of-cron-schedule/
 #
 # to run this every day in 2am  
-# 0 2 * * * /bin/sh backup.sh
-
+# 0 2 * * * /usr/bin/python python.py
+#
 ##########################################################
 
 #Importing the modules
@@ -25,11 +25,14 @@ import time
 import shutil
 
 
-# Application Settings
-
+# IMPORTANT Application Settings
 BACKUP_PATH = "/var/backups/mysql/"
-DATETIME = time.strftime('%m%d%Y')
-BACKUP_LIFE_IN_DAYS = 7 #
+BACKUP_LIFE_IN_DAYS = 7 # days
+
+
+
+# ADDITIONAL Application Settings
+DATETIME = time.strftime('%Y-%m-%d')
 
 
 
@@ -86,7 +89,7 @@ for database in os.popen(database_list_command).readlines():
         continue
 
     filestamp = time.strftime('%H-%M-%S')
-    filename =  TODAYBACKUPPATH + "%s-%s.sql" % (database, filestamp)
+    filename =  TODAYBACKUPPATH +"/" + "%s-%s.sql" % (filestamp, database)
     os.popen("mysqldump --single-transaction -u %s -p%s -h %s -d %s | gzip -c > %s.gz" % (username, password, hostname, database, filename))
 
 
