@@ -14,7 +14,7 @@
 # Some scheduling CRON TIps in http://tecadmin.net/crontab-in-linux-with-20-examples-of-cron-schedule/
 #
 # to run this every day in 2am  
-# 0 2 * * * /usr/bin/python python.py
+# 0 2 * * * /usr/bin/python dbbackup.py
 #
 ##########################################################
 

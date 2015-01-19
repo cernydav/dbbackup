@@ -1,0 +1,14 @@
+# Settings for configurable version of dbbackup
+# This file should go to /etc/dbbackup/settings.cnf
+
+[settings]
+
+#folder where backups will be saved
+backup_path = /var/backups/mysql/
+
+# backup life time span after this time span folders with data are deleted
+life_span = 7
+
+# Folder Naming Application Settings
+datetime_format =  %Y-%m-%d
+

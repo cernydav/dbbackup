@@ -1,0 +1,5 @@
+#!/bin/sh
+# Proper header for a Bash script.
+
+/usr/bin/python /usr/share/dbbackup/dbbackup.py
+

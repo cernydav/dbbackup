@@ -14,3 +14,20 @@ Some scheduling CRON TIps in http://tecadmin.net/crontab-in-linux-with-20-exampl
 	to run this every day in 2am  
 	0 2 * * * /usr/bin/python python.py
 
+
+## Versions
+
+There are two versions. 
+
+* Simple
+* Cofigurable
+
+Simple uses one file with all configuration in it. Configurable is version splitted to two files one is config which should go to /etc/ and second is will be executable which will go to /usr/share/ and /usr/bin/
+
+## Notice 
+
+This script must be run with root privileges.
+
+
+
+
